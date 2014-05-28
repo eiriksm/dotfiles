@@ -1,6 +1,7 @@
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/
+set cursorline
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -8,7 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
-
+Bundle 'css_color'
 execute pathogen#infect()
 
 filetype plugin indent on    " required!"
