@@ -44,3 +44,11 @@ for file in $dir/*; do
     echo "Creating symlink to $file in home directory."
     ln -s $file ~/.$filename
 done
+
+# Add git completion.
+#!/bin/bash
+kernel="2.6.39";
+distro="xyz";
+
+# Append into bash_profile
+printf "if [ -f ~/.git-completion.bash ]; then\n\t. ~/.git-completion.bash\nfi" >> ~/.bash_profile
