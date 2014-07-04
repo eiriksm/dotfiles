@@ -26,3 +26,5 @@
   untracked = blue bold
 [core]
 	editor = vim
+[push]
+	default = matching
