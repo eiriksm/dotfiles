@@ -20,11 +20,9 @@ echo "...done"
 mkdir -p ~/.vim/colors
 cd ~/.vim/colors
 wget https://raw.github.com/tomasr/molokai/master/colors/molokai.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -o ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-mkdir -p ~/.vim/autoload ~/.vim/bundle; curl -Sso ~/.vim/autoload/pathogen.vim     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
-
-
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
