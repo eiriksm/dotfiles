@@ -1,13 +1,15 @@
+set nocp
+source $HOME/.vim/autoload/pathogen.vim
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/
-set cursorline
 call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tomasr/molokai'
+Bundle 'tpope/vim-pathogen'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'css_color'
 execute pathogen#infect()
@@ -120,4 +122,5 @@ map <C-S-j> :JSHint<cr>
 set t_Co=256 " we can use 256 colors
 set background=dark " indicate bg color
 colorscheme molokai
+cnoremap sudow w !sudo tee % >/dev/null
 
