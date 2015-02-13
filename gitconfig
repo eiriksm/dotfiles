@@ -25,6 +25,6 @@
   changed = green bold
   untracked = blue bold
 [core]
-	editor = vim
+  editor = vim
 [push]
-	default = matching
+  default = matching

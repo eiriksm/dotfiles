@@ -12,6 +12,8 @@ Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-pathogen'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'css_color'
+Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+Bundle 'neocomplcache.vim'
 execute pathogen#infect()
 
 filetype plugin indent on    " required!"
@@ -108,11 +110,9 @@ map <C-a> :call SmartHome()<CR>
 imap <C-e> <ESC>$i<right>
 map <C-e> $
 
-map <C-x> :tabclose<cr>
 map <C-l> :tabnext<cr>
 map <C-h> :tabprev<cr>
 imap <C-t> <ESC>:tabnew<cr>i
-imap <C-x> <ESC>:tabclose<cr>
 imap <C-l> <ESC>:tabnext<cr>i
 imap <C-h> <ESC>:tabprev<cr>i
 map <C-S-o> :e .<cr>
@@ -124,3 +124,15 @@ set background=dark " indicate bg color
 colorscheme molokai
 cnoremap sudow w !sudo tee % >/dev/null
 
+" Autocomplete crap.
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+let g:neocomplcache_enable_at_startup = 1
+" Highlight redundant whitespaces and tabs.
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
+
+let g:syntastic_php_phpcs_args="--report=csv --standard=Drupal"
+
+cnoremap sudow w !sudo tee % >/dev/null
